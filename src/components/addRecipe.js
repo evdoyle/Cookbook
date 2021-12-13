@@ -25,7 +25,10 @@ function AddRecipe() {
             let url = BASE_URL + name + "&directions=" + directions;
             fetch(url, { method: 'POST', mode: 'cors'})
                 .then((response) => {
-                    if (!response.ok) throw Error(response.statusText);
+                    if (!response.ok) {
+                        document.querySelector('#error-message').hidden = false;
+                        throw Error(response.statusText);
+                    } 
                     return response.json();
                 })
                 .then((data) => {
@@ -48,6 +51,9 @@ function AddRecipe() {
                 <input id="directions" type="text" onChange={updateDirections} placeholder='Directions' /><br />
                 <input type="submit"></input>
             </form>
+
+            <p id="error-message" hidden>Invalid entry, plese contact jake@appiphony.com for more details</p>
+
         </div>
     );
 }

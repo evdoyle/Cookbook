@@ -43,6 +43,7 @@ class Search extends React.Component {
                     .then((response) => {
                         if (!response.ok) {
                             console.log(response);
+                            document.querySelector('#error-message').hidden = false;
                             throw Error(response.statusText);
                         }
                         return response.json();
@@ -108,6 +109,9 @@ class Search extends React.Component {
                 { ingredients.map(res => (
                     <IngredientList name={res.name} id={res.id}/>
                 ))}
+
+                <p id="error-message" hidden>Invalid entry, plese contact jake@appiphony.com for more details</p>
+
             </div>
             
         );

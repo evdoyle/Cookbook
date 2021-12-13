@@ -42,7 +42,10 @@ function Recipe() {
             let url = ingredientUrl + "?recipeId=" + recipeId + "&name=" + ingredientName;
             fetch(url, { method: 'POST', mode: 'cors'})
                 .then((response) => {
-                    if (!response.ok) throw Error(response.statusText);
+                    if (!response.ok) {
+                        document.querySelector('#error-message').hidden = false;
+                        throw Error(response.statusText);
+                    }
                     return response.json();
                 })
                 .then((data) => {
@@ -79,6 +82,8 @@ function Recipe() {
                 <input type="text" onChange={handleChange} placeholder='Ingredient Name' />
                 {/* <input type="submit" onClick={addIngredient}></input> */}
             </form>
+
+            <p id="error-message" hidden>Invalid entry, plese contact jake@appiphony.com for more details</p>
         </div>
             );
 
