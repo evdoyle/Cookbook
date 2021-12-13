@@ -6,6 +6,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(247, 230, 157);
+  /* display: flex; */
+  width: 100%;
+  height: 100vh; 
+
 }
 
 code {

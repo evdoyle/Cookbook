@@ -33,7 +33,7 @@ function AddRecipe() {
                 })
                 .then((data) => {
                     console.log("yay");
-                    navigate('/');
+                    navigate('/recipe/'+data.id, {state:{recipeId: data.id}});
                 })
                 .catch(error => console.log(error));
         }

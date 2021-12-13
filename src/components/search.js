@@ -78,39 +78,43 @@ class Search extends React.Component {
         const {searchTerm, recipes, ingredients} = this.state;
         
         return (
-            <div className="seachpage">
-                <form className="searchbar" onSubmit={this.handleSubmit}>
-                    <h1>Search our database of recipes, either by recipe name, ingredients, or both!</h1>
-                    <input type="text" onChange={this.handleChange} value={searchTerm} placeholder='Search...' /><br />
+            <div id="searchpage">
+                <form className="searchbar" id="searchBar" onSubmit={this.handleSubmit}>
+                    <h1 id="searchTitle">Search our database of recipes, either by recipe name, ingredients, or both!</h1><br/><br/>
+                    <div id="searchInput">
+                        <input type="text" id="text-input" onChange={this.handleChange} value={searchTerm} placeholder='Search...' /><br />
 
-                    <input type="radio" id="recipes" name="searchType" value="recipes"/>
-                    <label htmlFor="recipes">Recipes</label><br />
+                        <input type="radio" id="recipes" name="searchType" value="recipes"/>
+                        <label htmlFor="recipes">Recipes</label><br />
 
-                    <input type="radio" id="ingredients" name="searchType" value="ingredients"/>
-                    <label htmlFor="ingredients">Ingredients</label><br />
+                        <input type="radio" id="ingredients" name="searchType" value="ingredients"/>
+                        <label htmlFor="ingredients">Ingredients</label><br />
 
-                    <input type="radio" id="both" name="searchType" value="both" defaultChecked/>
-                    <lable htmlFor="both">Both</lable>
+                        <input type="radio" id="both" name="searchType" value="both" defaultChecked/>
+                        <lable htmlFor="both">Both</lable>
+                    </div>
 
                 </form>
 
-                {recipes.length>0 &&
-                    <h2>{recipes.length} recipe{recipes.length !== 1 ? 's' : ''} matching your search</h2>
-                }
+                <div id="searchResults">
+                    {recipes.length>0 &&
+                        <h2>{recipes.length} recipe{recipes.length !== 1 ? 's' : ''} matching your search</h2>
+                    }
 
-                { recipes.map(res => (
-                    <RecipeList name={res.name} id={res.id}/>
-                ))}
-                <br></br>
+                    { recipes.map(res => (
+                        <RecipeList className="recipeListing" name={res.name} id={res.id}/>
+                    ))}
+                    <br></br>
 
-                { ingredients.length>0 &&
-                    <h2>{ingredients.length} ingredient{ingredients.length !== 1 ? 's' : ''} matching your search</h2>
-                }
-                { ingredients.map(res => (
-                    <IngredientList name={res.name} id={res.id}/>
-                ))}
+                    { ingredients.length>0 &&
+                        <h2>{ingredients.length} ingredient{ingredients.length !== 1 ? 's' : ''} matching your search</h2>
+                    }
+                    { ingredients.map(res => (
+                        <IngredientList lassName="ingredientListing" name={res.name} id={res.id}/>
+                    ))}
 
-                <p id="error-message" hidden>Invalid entry, plese contact jake@appiphony.com for more details</p>
+                    <p id="error-message" hidden>Invalid entry, plese contact jake@appiphony.com for more details</p>
+                </div>
 
             </div>
             

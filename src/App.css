@@ -37,6 +37,12 @@
   }
 }
 
+#root {
+  width: 100vw;
+  height:100vh;
+  display:block;
+}
+
 .header {
   background-color: rgb(230, 212, 136);
 
@@ -50,11 +56,64 @@
 
   padding: 15px;
   font-size: large;
+  width: 100%;
 }
 
-.searchBar {
-  align-items: center;
+.header-home {
+  color:palevioletred;
+  margin-left: 5%;
+  font-size: 30pt;
 }
+
+.add-recipe-button {
+  margin-right: 10%;
+}
+
+#searchpage {
+  width: 100%;
+  height: 100%;
+  display:block;
+}
+
+#searchBar {
+  width: 100%;
+  height: 30%;
+  display:flex;
+  
+}
+#searchTitle {
+  position:absolute;
+  margin-bottom: 0px;
+}
+
+#searchInput {
+  margin: auto;
+  align-items: center;
+  width:100%;
+  margin-bottom:0px;
+
+}
+#recipes, #ingredients, #both {
+  margin-left:45%;
+}
+
+#searchResults {
+  width:70%;
+  margin:auto;
+  margin-bottom:50px;
+}
+
+.recipeListing, .ingredientListing{
+  width:fit-content;
+  margin-left:20%;
+}
+
+#text-input {
+  margin-left:20%;
+  width:60%;
+}
+
+
 
 #directions {
   width: 80%;
