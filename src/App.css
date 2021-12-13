@@ -36,3 +36,64 @@
     transform: rotate(360deg);
   }
 }
+
+.header {
+  background-color: rgb(230, 212, 136);
+
+  border-bottom: black;
+  border-width: 3px;
+  border-bottom-style:solid;
+
+  display:flex;
+  align-items: center;
+  justify-content:space-between;
+
+  padding: 15px;
+  font-size: large;
+}
+
+.searchBar {
+  align-items: center;
+}
+
+#directions {
+  width: 80%;
+  height: 50px;
+}
+
+.mainPage {
+  align-items: center;
+  align-content: center;
+}
+
+.logo {
+  text-align: left;
+  vertical-align: middle;
+  margin-right:20px;
+}
+
+#logo {
+  width: 150px;
+}
+
+#searchbar {
+  vertical-align: middle;
+  width:25%;
+  height:12pt;
+}
+
+#add-recipe {
+  background-color: greenyellow;
+  outline-style: solid;
+  outline-color:black;
+  outline-width: 1px;
+
+  height:40px;
+  vertical-align: center;
+}
+
+#recipe-inst {
+  width:80%;
+  height:50px;
+  
+}

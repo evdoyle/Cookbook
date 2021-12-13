@@ -3,11 +3,26 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Header from './components/header';
+import Home from './components/home';
+import Search from './components/search';
+import Recipe from './components/recipe';
+import Ingredient from './components/ingredient'
+import AddRecipe from './components/addRecipe'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router>
+    <Header />
+    <Routes className="mainPage">
+      {/* <Route path="/" element={<Home />} /> */}
+      <Route path="/" element={<Search />} /> 
+      <Route path="/recipe/:id" element={<Recipe />} />  
+      <Route path="/ingredient/:id" element={<Ingredient/>} />
+      <Route path="/addRecipe" element={<AddRecipe />} />
+    </Routes>
+  </Router>
+  ,
   document.getElementById('root')
 );
 

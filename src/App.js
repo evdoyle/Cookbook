@@ -1,24 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+// import Searchbar from './searchbar'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <div class="header">
+        <div class="logo">
+            <img src="./soup-logo.jpg" atl="Cook Book" id="logo" />
+        </div>
+        <div id="header-searchbar"> 
+        </div>
+        <div class="header-buttons"></div>
+            <a id="add-recipe" href="add_recipe.html">Add Recipe</a>
+        </div> */}
     </div>
+    
   );
 }
 
